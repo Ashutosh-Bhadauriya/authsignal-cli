@@ -1,0 +1,37 @@
+{
+  "name": "authsignal-cli",
+  "version": "0.1.0",
+  "description": "CLI for Authsignal - manage users, actions, rules, and authentication configuration",
+  "type": "module",
+  "bin": {
+    "authsignal": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "keywords": [
+    "authsignal",
+    "cli",
+    "authentication",
+    "mfa"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "cli-table3": "^0.6.5",
+    "commander": "^12.1.0",
+    "ora": "^8.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.6.0",
+    "vitest": "^4.1.2"
+  }
+}
