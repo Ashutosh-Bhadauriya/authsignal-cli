@@ -6,11 +6,15 @@ Built to be agent-friendly: non-interactive, predictable `resource verb` structu
 
 ## Install
 
-```bash
-npm install -g authsignal-cli
-```
-
 Requires Node.js 18+.
+
+```bash
+git clone <repo-url>
+cd cli
+npm install
+npm run build
+npm link        # makes `authsignal` available globally
+```
 
 ## Quick Start
 
@@ -29,6 +33,8 @@ authsignal users list --email user@example.com
 authsignal action-configs list
 authsignal tenant get
 ```
+
+To unlink later: `npm unlink -g authsignal-cli`
 
 ## Authentication
 
@@ -243,18 +249,9 @@ NO_COLOR=1 authsignal users list --email user@example.com
 ## Development
 
 ```bash
-git clone <repo>
-cd cli
-npm install
-npm run build
+npm run build       # rebuild after changes
 npm test            # 121 tests (unit + live API integration)
-
-# Run locally
-node dist/index.js --help
-
-# Link globally
-npm link
-authsignal --help
+npm run dev         # rebuild on file changes
 ```
 
 Integration tests require valid API credentials configured via `authsignal login`. They auto-skip if no credentials are found.
